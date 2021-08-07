@@ -1,0 +1,155 @@
+.profile_page_all {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: absolute;
+  min-width: 100% !important;
+  min-height: 100% !important;
+}
+
+.popup_input_width {
+  width: 100% !important;
+}
+
+.btn-link:focus {
+  text-decoration: none;
+  border: none;
+  border-bottom: none;
+}
+
+.btn {
+  border: none !important;
+  border-bottom: none;
+}
+.btn:focus {
+  box-shadow: none;
+}
+
+.card-body {
+  padding: 0px !important;
+}
+
+.profile_main_page {
+  text-align: center;
+  margin-top: vw(100px);
+
+  .image_add {
+    width: 3%;
+    cursor: pointer;
+  }
+}
+
+.music_main_div {
+  text-align: center;
+  border: vw(4px) solid #23d954;
+  border-radius: vw(120px);
+  .delete_img {
+    width: 3%;
+    cursor: pointer;
+  }
+}
+
+.modal-content {
+  border-radius: vw(60px);
+  border: 2px solid #23d954;
+  -webkit-box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+  -moz-box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+  box-shadow: -1px 0px 26px 0px rgba(35, 217, 84, 0.95);
+}
+
+.accordion {
+  padding: 0px !important;
+
+  .card {
+    border: none;
+    background-color: transparent;
+  }
+  .card-header {
+    background-color: #e94b3cff;
+    margin: auto;
+  }
+}
+
+/****************************************************NAVBAR CSS**************************************/
+.navbar {
+  .nav_input {
+    text-align: center;
+  }
+  .profile_img {
+    width: 3%;
+    margin-right: 12px;
+    border-radius: 30px;
+  }
+}
+
+/****************************************************ERROR PAGE CSS**************************************/
+.error_page_main {
+  .err_img {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    min-width: 100% !important;
+    min-height: 100% !important;
+  }
+
+  .error-button {
+    position: absolute;
+    top: 70%;
+    left: 60%;
+    width: 20%;
+    border-radius: vw(20px);
+    height: vw(85px);
+    border: none;
+    border: vw(1px) solid #23d954;
+    background-color: #f39c12;
+    font-family: "Quicksand-Regular";
+    font-size: vw(35px);
+    outline: none !important;
+  }
+}
+
+/****************************************************ERROR PAGE CSS**************************************/
+
+/**********************************MEDIA QUERY****************************************************/
+@media (max-width: 800px) {
+  .profile_main_page {
+    margin-top: mvw(80px);
+    .image_add {
+      width: 7%;
+    }
+  }
+
+  .music_main_div {
+    .delete_img {
+      width: 8%;
+    }
+    .edit_img {
+      width: 7%;
+    }
+  }
+  .navbar {
+    .profile_img {
+      width: 10%;
+      // margin-right: 12px;
+      // border-radius: 30px;
+    }
+  }
+
+  .error_page_main {
+    .error-button {
+      width: 35%;
+      border-radius: mvw(20px);
+      height: mvw(40px);
+      border: none;
+      border: mvw(1px) solid #23d954;
+      background-color: #f39c12;
+      font-family: "Quicksand-Regular";
+      font-size: mvw(13px);
+      outline: none !important;
+    }
+  }
+}

@@ -1,16 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-
+import {
+  StyleSheet,
+  View,
+} from 'react-native';
+import LoginPage from './src/containers/login/LoginPage';
 
 export default function App() {
-
   return (
     <View style={styles.container}>
-      <Text>HELLLOOOOO</Text>
+      <LoginPage/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    flex: 1,
+  }
 });
