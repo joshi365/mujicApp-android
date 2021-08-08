@@ -23,6 +23,5 @@ const styles = StyleSheet.create({
     fontFamily: 'regular',
     color: 'black',
     textAlign: 'center',
-    marginBottom: 23,
   },
 });

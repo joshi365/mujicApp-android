@@ -13,7 +13,7 @@ export default ButtonComp;
 
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 15,
+    borderRadius: 30,
     backgroundColor: '#23d954',
     padding: 15,
     alignItems: 'center',
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'medium',
-    fontSize:15
+    fontSize:17
   },
 });

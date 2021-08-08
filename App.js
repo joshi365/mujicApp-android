@@ -1,20 +1,23 @@
+// import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import LoginPage from './src/containers/login/LoginPage';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import Signup from './src/containers/signUp/Signup';
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LoginPage/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          header: () => null,
+        }}>
+        <Stack.Screen name="Home" component={LoginPage} />
+        <Stack.Screen name="signup" component={Signup} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  }
-});

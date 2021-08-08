@@ -5,10 +5,15 @@ import {
 } from 'react-native';
 import LoginForm from '../../components/loginComp/LoginForm';
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
+
+  const onClickHandler = () => {
+    navigation.navigate("signup")
+  }
+
   return (
     <View style={styles.container}>
-     <LoginForm/>
+     <LoginForm onClickHandler={onClickHandler}/>
     </View>
   );
 };
