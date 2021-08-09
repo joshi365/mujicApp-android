@@ -11,7 +11,7 @@ import {reusableCss} from '../../utils/reusableCss';
 import ButtonComp from '../common/ButtonComp';
 import InputComp from '../common/InputComp';
 
-const LoginForm = ({onClickHandler}) => {
+const LoginForm = ({onClickHandler,onSubmitHandler}) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -31,7 +31,7 @@ const LoginForm = ({onClickHandler}) => {
           <View style={styles.margin}>
             <InputComp placeholder="Password" secureTextEntry={true} />
           </View>
-          <ButtonComp name="Login" />
+          <ButtonComp name="Login" func={onSubmitHandler}/>
           <Text style={styles.sinupText}>New user</Text>
           <TouchableOpacity onPress={() => onClickHandler()}>
             <Text style={styles.sinupClickText}>Sign-up here</Text>

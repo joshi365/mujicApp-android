@@ -1,9 +1,9 @@
 import React from 'react';
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-const ButtonComp = ({name}) => {
+const ButtonComp = ({name, func}) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity style={styles.button} onPress={() => func()}>
       <Text style={styles.buttonText}>{name}</Text>
     </TouchableOpacity>
   );
@@ -22,6 +22,6 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontFamily: 'medium',
-    fontSize:17
+    fontSize: 17,
   },
 });
