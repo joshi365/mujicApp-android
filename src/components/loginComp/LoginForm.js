@@ -11,7 +11,13 @@ import {reusableCss} from '../../utils/reusableCss';
 import ButtonComp from '../common/ButtonComp';
 import InputComp from '../common/InputComp';
 
-const LoginForm = ({onClickHandler, onSubmitHandler}) => {
+
+const LoginForm = ({
+  onClickHandler,
+  onSubmitHandler,
+  setNumber,
+  setPassword,
+}) => {
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -26,10 +32,17 @@ const LoginForm = ({onClickHandler, onSubmitHandler}) => {
             <Text style={reusableCss.RT}>Login</Text>
           </View>
           <View style={styles.margin}>
-            <InputComp placeholder="Mobile number" />
+            <InputComp
+              placeholder="Mobile number"
+              onChangeText={text => setNumber(text)}
+            />
           </View>
           <View style={styles.margin}>
-            <InputComp placeholder="Password" secureTextEntry={true} />
+            <InputComp
+              placeholder="Password"
+              secureTextEntry={true}
+              onChangeText={text => setPassword(text)}
+            />
           </View>
           <ButtonComp name="Login" func={onSubmitHandler} />
           <Text style={styles.sinupText}>New user</Text>

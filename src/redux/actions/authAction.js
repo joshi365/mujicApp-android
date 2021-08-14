@@ -2,30 +2,45 @@ import axios from 'axios';
 import {APP_BASE_URL, AUTH_URL} from '../config';
 import {types} from '../reducers/types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import setAuthToken from '../../utils/setAuthToken';
+import jwt_decode from  'jwt-decode'
 
 const {SET_CURRENT_USER} = types;
 
-export const set_current_user = () => async dispatch => {
+export const set_current_user = (decoded) => async (dispatch) => {
   dispatch({
     type: SET_CURRENT_USER,
+    payload: decoded,
   });
 };
 
-export const userLogin = () => async dispatch => {
+export const userLogin = (formdata,navigation) => async dispatch => {
   const data = {
     number: '8859540293',
-    password: '123456'
+    password: '123456',
   };
 
-  const link = APP_BASE_URL+AUTH_URL 
+  const link = APP_BASE_URL + AUTH_URL;
 
-  const getAuthData = await axios.post(link,data)
-
-  await AsyncStorage.setItem("auth-key",getAuthData.data)
-
-  console.log(getAuthData.data)
+  try {
+    await axios.post(link, formdata).then(res => {
+      if (res.status === 200) {
+        const token = res.data
+        console.log(token)
+        AsyncStorage.setItem('auth-key', token);
+        dispatch({
+          type: SET_CURRENT_USER,
+        });
+        setAuthToken(token)
   
-  dispatch({
-    type: SET_CURRENT_USER,
-  });
+        const decoded = jwt_decode(token)
+        dispatch(set_current_user(decoded));
+
+        navigation.navigate("mujic_list");
+
+      }
+    });
+  } catch (error) {
+    console.log(error);
+  }
 };
