@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {APP_BASE_URL, AUTH_URL} from '../config';
 import {types} from '../reducers/types';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const {SET_CURRENT_USER} = types;
 
@@ -18,9 +19,11 @@ export const userLogin = () => async dispatch => {
 
   const link = APP_BASE_URL+AUTH_URL 
 
-  const authData = await axios.post(link,data)
+  const getAuthData = await axios.post(link,data)
 
-  console.log(authData.data)
+  await AsyncStorage.setItem("auth-key",getAuthData.data)
+
+  console.log(getAuthData.data)
   
   dispatch({
     type: SET_CURRENT_USER,

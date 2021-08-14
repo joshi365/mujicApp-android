@@ -1,8 +1,9 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch} from 'react-redux';
 import LoginForm from '../../components/loginComp/LoginForm';
 import {userLogin} from '../../redux/actions/authAction';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginPage = ({navigation}) => {
   const dispatch = useDispatch();
@@ -11,34 +12,12 @@ const LoginPage = ({navigation}) => {
     navigation.navigate('signup');
   };
 
+  // const getAuthkey = async () => {
+  //   const key = await AsyncStorage.getItem('auth-key');
+  //   console.log(key,"new key")
+  // };
+
   const onSubmitHandler = () => dispatch(userLogin());
-
-  // const onSubmitHandler = () => {
-  //   let card_data = {
-  //     number:"8859540293",
-  //     password:"123456"
-  // };
-  //   const options = {
-  //     method: 'post',
-  //     headers: {
-  //       Accept: 'application/json, text/plain, */*',
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify(card_data),
-  //   };
-
-  //   fetch('http://192.168.29.200:5000/api/user/login', options)
-  //     .then(response => {
-  //       console.log(response.headers,"dadawdw");
-  //       if (response) {
-  //         return response.json();
-  //       } else {
-  //         throw new Error('Something went wrong ...');
-  //       }
-  //     })
-  //     .then(data => console.log(data,"then data"))
-  //     .catch(error => console.log(error,"error"));
-  // };
 
   return (
     <View style={styles.container}>
