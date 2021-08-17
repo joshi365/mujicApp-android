@@ -15,10 +15,11 @@ import {set_current_user} from './src/redux/actions/authAction';
 const Stack = createStackNavigator();
 
 const App = () => {
-  
-  setTimeout(async() => {
-    const token = await AsyncStorage.getItem('auth-key');
-    if(token){
+  var token;
+
+  setTimeout(async () => {
+    token = await AsyncStorage.getItem('auth-key');
+    if (token) {
       setAuthToken(token);
       const decoded = jwt_decode(token);
       store.dispatch(set_current_user(decoded));

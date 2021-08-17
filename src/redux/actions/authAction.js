@@ -15,11 +15,7 @@ export const set_current_user = (decoded) => async (dispatch) => {
 };
 
 export const userLogin = (formdata,navigation) => async dispatch => {
-  const data = {
-    number: '8859540293',
-    password: '123456',
-  };
-
+ 
   const link = APP_BASE_URL + AUTH_URL;
 
   try {
