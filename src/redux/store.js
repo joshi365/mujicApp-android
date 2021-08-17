@@ -1,6 +1,6 @@
 import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
-import authReducer from './reducers/reducers/authReducer';
+import authReducer from './reducers/authReducer';
 import devToolsEnhancer from 'remote-redux-devtools';
 
 const middleware = [thunk];

@@ -1,5 +1,5 @@
-import isEmpty from "../../../utils/isEmpty"
-import { types } from "../types"
+import isEmpty from "../../utils/isEmpty"
+import { types } from "./types"
 
 const initialState = {
     isAuthenticated : false,
