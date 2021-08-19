@@ -1,5 +1,5 @@
 import isEmpty from "../../utils/isEmpty"
-import { types } from "./types"
+import { SET_CURRENT_USER } from "../types"
 
 const initialState = {
     isAuthenticated : false,
@@ -8,7 +8,7 @@ const initialState = {
 
 function authReducer (state = initialState, action) {
     switch(action.type){
-        case types.SET_CURRENT_USER:
+        case SET_CURRENT_USER:
             return {
                 ...state,
                 user:action.payload,

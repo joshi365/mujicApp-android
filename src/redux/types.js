@@ -1,0 +1,2 @@
+export const SET_CURRENT_USER = 'SET_CURRENT_USER';
+export const GET_ALL_MUSIC_LIST = 'GET_ALL_MUSIC_LIST';

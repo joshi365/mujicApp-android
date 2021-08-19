@@ -1,11 +1,9 @@
 import axios from 'axios';
 import {APP_BASE_URL, AUTH_URL} from '../config';
-import {types} from '../reducers/types';
+import {SET_CURRENT_USER} from '../types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import setAuthToken from '../../utils/setAuthToken';
 import jwt_decode from  'jwt-decode'
-
-const {SET_CURRENT_USER} = types;
 
 export const set_current_user = (decoded) => async (dispatch) => {
   dispatch({

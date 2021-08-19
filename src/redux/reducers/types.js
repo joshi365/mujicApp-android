@@ -1,4 +1,0 @@
-export const types = {
-  SET_CURRENT_USER: 'SET_CURRENT_USER',
-  GET_ALL_MUSIC_LIST:"GET_ALL_MUSIC_LIST"
-};
