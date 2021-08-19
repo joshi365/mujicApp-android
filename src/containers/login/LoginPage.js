@@ -16,14 +16,9 @@ const LoginPage = ({navigation}) => {
     navigation.navigate('signup');
   };
 
-  const checkAuth = useSelector(state => state.authReducer);
+  // const checkAuth = useSelector(state => state.authReducer);
 
-  console.log(checkAuth)
-
-  // const getAuthkey = async () => {
-  //   const key = await AsyncStorage.getItem('auth-key');
-  //   console.log(key,"new key")
-  // };
+  // console.log(checkAuth)
 
   const onSubmitHandler = () => {
     const formdata = {
