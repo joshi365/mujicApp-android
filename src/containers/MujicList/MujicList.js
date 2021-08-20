@@ -1,22 +1,24 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
+import ListComp from '../../components/MujicListComp/ListComp';
 import {getMusicList} from '../../redux/actions/userActions';
 import isEmpty from '../../utils/isEmpty';
 
 const MujicList = () => {
   const dispatch = useDispatch();
 
-  //const renderItem = ({item}) => <MujicList title={item.album} />;
+  const renderItem = ({item}) => <ListComp title={item.album} />;
 
   const [music, setMusic] = useState();
 
   const getMusicFromStore = useSelector(state => state.userReducer.mujicList);
 
+
   useEffect(() => {
     dispatch(getMusicList());
-    setMusic(getMusicFromStore);
-  }, []);
+    //setMusic(getMusicFromStore);
+  }, [setMusic]);
 
   return (
     <View>
@@ -26,7 +28,7 @@ const MujicList = () => {
         <FlatList
           data={music}
           keyExtractor={item => item._id}
-          renderItem={({item}) => <Text>{item.album}</Text>}
+          renderItem={renderItem}
         />
       ) : (
         <Text>Loading .....</Text>

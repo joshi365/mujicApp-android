@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const MujicList = ({title}) => {
+const ListComp = ({title}) => {
     console.log(title,"title")
   return (
     <View>
@@ -10,7 +10,7 @@ const MujicList = ({title}) => {
   );
 };
 
-export default MujicList;
+export default ListComp;
 
 
 const styles =StyleSheet.create({
