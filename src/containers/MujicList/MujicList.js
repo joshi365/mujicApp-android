@@ -22,8 +22,6 @@ const MujicList = () => {
 
   return (
     <View>
-      {console.log('dad')}
-
       {!isEmpty(music) ? (
         <FlatList
           data={music}
