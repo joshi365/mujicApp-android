@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, Text, FlatList, StyleSheet} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import ListComp from '../../components/MujicListComp/ListComp';
 import {getMusicList} from '../../redux/actions/userActions';
@@ -13,7 +13,6 @@ const MujicList = () => {
   const [music, setMusic] = useState();
 
   const getMusicFromStore = useSelector(state => state.userReducer.mujicList);
-
 
   useEffect(() => {
     dispatch(getMusicList());
@@ -35,3 +34,7 @@ const MujicList = () => {
 };
 
 export default MujicList;
+
+const styles = StyleSheet.create({
+ 
+});
