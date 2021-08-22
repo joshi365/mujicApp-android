@@ -17,7 +17,6 @@ const MujicList = () => {
 
   useEffect(() => {
     dispatch(getMusicList());
-    //setMusic(getMusicFromStore);
   }, [setMusic]);
 
   return (
