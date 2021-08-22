@@ -21,9 +21,9 @@ const MujicList = () => {
 
   return (
     <View>
-      {!isEmpty(music) ? (
+      {!isEmpty(getMusicFromStore) ? (
         <FlatList
-          data={music}
+          data={getMusicFromStore}
           keyExtractor={item => item._id}
           renderItem={renderItem}
         />

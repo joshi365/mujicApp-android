@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 const ListComp = ({title}) => {
     console.log(title,"title")
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.textArea}>{title}</Text>
     </View>
   );
