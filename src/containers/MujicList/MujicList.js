@@ -35,6 +35,4 @@ const MujicList = () => {
 
 export default MujicList;
 
-const styles = StyleSheet.create({
- 
-});
+const styles = StyleSheet.create({});

@@ -3,8 +3,6 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import {useDispatch} from 'react-redux';
 import LoginForm from '../../components/loginComp/LoginForm';
 import {userLogin} from '../../redux/actions/authAction';
-import {useSelector} from 'react-redux';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const LoginPage = ({navigation}) => {
   const [number, setNumber] = useState('');
@@ -15,10 +13,6 @@ const LoginPage = ({navigation}) => {
   const onClickHandler = () => {
     navigation.navigate('signup');
   };
-
-  // const checkAuth = useSelector(state => state.authReducer);
-
-  // console.log(checkAuth)
 
   const onSubmitHandler = () => {
     const formdata = {
