@@ -8,7 +8,7 @@ import isEmpty from '../../utils/isEmpty';
 const MujicList = () => {
   const dispatch = useDispatch();
 
-  const renderItem = ({item}) => <ListComp title={item.album} />;
+  const renderItem = ({item}) => <ListComp data={item} />;
 
   const [music, setMusic] = useState();
 
@@ -25,6 +25,7 @@ const MujicList = () => {
           data={getMusicFromStore}
           keyExtractor={item => item._id}
           renderItem={renderItem}
+          refreshing={true}
         />
       ) : (
         <Text>Loading .....</Text>
