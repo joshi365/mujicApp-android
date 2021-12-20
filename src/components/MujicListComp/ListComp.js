@@ -4,7 +4,6 @@ import {View, Text, StyleSheet} from 'react-native';
 const ListComp = ({data}) => {
   return (
     <View style={styles.container}>
-      {console.log({data})}
       <View style={styles.row}>
         <Text style={styles.textArea}>{data.song}</Text>
         <Text style={styles.textArea}>{data.album}</Text>

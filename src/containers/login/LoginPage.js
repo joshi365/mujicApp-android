@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {View, StyleSheet, ToastAndroid} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import LoginForm from '../../components/loginComp/LoginForm';
 import {userLogin} from '../../redux/actions/authAction';
 
 const LoginPage = ({navigation}) => {
   const [number, setNumber] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
+  const getLoginError = useSelector(state => state.authReducer.loginError);
 
   const onClickHandler = () => {
     navigation.navigate('signup');
   };
+
+  const showLoader = () => setLoading(true);
+  const removeLoader = () => setLoading(false);
 
   const onSubmitHandler = () => {
     const formdata = {
@@ -20,7 +25,7 @@ const LoginPage = ({navigation}) => {
       password: password,
     };
 
-    dispatch(userLogin(formdata, navigation));
+    dispatch(userLogin(formdata, navigation, showLoader, removeLoader));
   };
 
   return (
@@ -30,6 +35,7 @@ const LoginPage = ({navigation}) => {
         onSubmitHandler={onSubmitHandler}
         setNumber={setNumber}
         setPassword={setPassword}
+        isLoading={isLoading}
       />
     </View>
   );
