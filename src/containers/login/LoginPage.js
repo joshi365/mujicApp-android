@@ -19,13 +19,36 @@ const LoginPage = ({navigation}) => {
   const showLoader = () => setLoading(true);
   const removeLoader = () => setLoading(false);
 
-  const onSubmitHandler = () => {
-    const formdata = {
-      number: number,
-      password: password,
-    };
+  var pattern = /^[0-9]{10}$/;
 
-    dispatch(userLogin(formdata, navigation, showLoader, removeLoader));
+  const onSubmitHandler = () => {
+    if (!pattern.test(number)) {
+      ToastAndroid.showWithGravityAndOffset(
+        'incorrect number format',
+        ToastAndroid.LONG,
+        ToastAndroid.TOP,
+        0,
+        5,
+      );
+    }
+
+    if (password.length < 6) {
+      ToastAndroid.showWithGravityAndOffset(
+        'password lenght shoud be 6 or more',
+        ToastAndroid.LONG,
+        ToastAndroid.TOP,
+        0,
+        5,
+      );
+    }
+
+    if (password.length >= 6 && pattern.test(number)) {
+      const formdata = {
+        number: number,
+        password: password,
+      };
+      dispatch(userLogin(formdata, navigation, showLoader, removeLoader));
+    }
   };
 
   return (
