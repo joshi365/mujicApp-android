@@ -1,18 +1,24 @@
-import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import React from 'react';
+import {View, Text, StyleSheet} from 'react-native';
+import SignUpForm from '../../components/signUpComp/SignUpForm';
 
-const Signup = () => {
-    return (
-        <View style={styles.container}>
-            <Text>HEEELOOOOOOO</Text>
-        </View>
-    )
-}
+const Signup = ({navigation}) => {
+    
+  const onClickHandler = () => {
+    navigation.navigate('Home');
+  };
 
-export default Signup
+  return (
+    <View style={styles.container}>
+      <SignUpForm onClickHandler={onClickHandler} />
+    </View>
+  );
+};
+
+export default Signup;
 
 const styles = StyleSheet.create({
-    container:{
-        backgroundColor:"red"
-    }
-})
+  container: {
+    flex: 1,
+  },
+});
